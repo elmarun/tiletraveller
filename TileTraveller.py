@@ -23,14 +23,15 @@ j = 1
 # (i,j)
 while True:
     if j == 1 and i == 1:
-        print("You can travel: ", north)
+        print("You can travel:", north + ".")
         d = input("Direction: ")
         if d == "n" or d == "N": #1,1
             j += 1
         else:
             print("Not a valid direction!")
+            d = input("Direction: ")
     elif j == 2 and i == 1: #1,2
-        print("You can travel: ", north, "or", east, "or", south)
+        print("You can travel:", north, "or", east, "or", south + ".")
         d = input("Direction: ")
         if d == "n" or d == "N":
             j += 1 #1,3
@@ -41,7 +42,7 @@ while True:
         else:
             print("Not a valid direction!")
     elif j == 3 and i ==1: #1,3 
-        print("You can travel: ", east, "or", south)
+        print("You can travel:", east, "or", south + ".")
         d = input("Direction: ")
         if d == "e" or d == "E":
             i += 1 #2,3
@@ -50,14 +51,14 @@ while True:
         else: 
             print("Not a valid direction!")
     elif j == 1 and i == 2: #2,1
-        print("You can travel: ", north)
+        print("You can travel:", north + ".")
         d = input("Direction: ")
         if d == "n" or d == "N":
             j += 1 #2,2
         else: 
             print("Not a valid direction!")
     elif j == 2 and i == 2: #2,2
-        print("You can travel: ", west, "or", south)
+        print("You can travel:", south, "or", west + ".")
         d = input("Direction: ")
         if d == "w" or d == "W":
             i -= 1 #1,2
@@ -66,7 +67,7 @@ while True:
         else: 
             print("Not a valid direction!")
     elif j == 3 and i == 2: #2,3
-        print("You can travel: ", east, "or", west)
+        print("You can travel:", east, "or", west + ".")
         d = input("Direction: ")
         if d == "e" or d == "E":
             i += 1 #3,3
@@ -78,18 +79,24 @@ while True:
         print("Victory!")
         break
     elif j == 2 and i == 3: #3,2
-        print("You can travel: ", north, "or", south)
+        print("You can travel:", north, "or", south + ".")
         d = input("Direction: ")
         if d == "n" or d == "N":
             j += 1 #3,3
         elif d == "s" or d == "S":
             j -= 1 #3,1
+        else: 
+            print("Not a valid direction!")
     elif j == 3 and i == 3: #3,3
-        print("You can travel: ", west, "or", south)
+        print("You can travel:", south, "or", west + ".")
         d = input("Direction: ")
         if d == "w" or d == "W":
             i -= 1 #2,3
         elif d == "s" or d == "S":
             j -= 1 #3,2
+        else: 
+            print("Not a valid direction!")
     else:
         print("not a valid direction!")
+
+
